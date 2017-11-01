@@ -80,7 +80,7 @@ g <- g + guides(fill = guide_legend(title='Country'))
 g
 ```
 
-![](notebook_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](unnamed-chunk-3-1.png)<!-- -->
 
 It becomes now more obvious that the vast majority of the reports originate from the US, which is not really surprising. Let's next have a closer look if the same pattern holds up when we retrieve the adverse reactions for one given drug (Aspirin in this example).
 
@@ -102,7 +102,7 @@ g <- g + guides(fill = guide_legend(title='Country'))
 g
 ```
 
-![](notebook_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](unnamed-chunk-4-1.png)<!-- -->
 
 Overall, the dominance of reports originating from the US persists even if only one drug is considered. It is interessting to note that the ranking of the other countries slightly changes. Germany is now at third place whilst Japan drops down to 7th place which is most likely due to different market penetration for the drug in question. Next, let's retrieve the adverse reactions reported for the use of aspirin per country and scale them by the total of aspirin related reports per counbtry so the different countries can be compared more easily.
 
@@ -160,7 +160,7 @@ library(pheatmap)
 pheatmap(t(reaction_mx[,which(apply(reaction_mx , 2, min)>0)]), scale = 'none', cellheight = 10, cellwidth=20, fontsize = 6)
 ```
 
-![](notebook_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](unnamed-chunk-5-1.png)<!-- -->
 
 If one compares adverse reactions that have been commonly reported in all 10 countries i.e. that do not contain misssing values (n=135) it becomes obvious that adverse reactions are reported differently in different countries. In the case of Canada for example the relative percentage of Fatigue or Nausae reported as adverse reactions to Aspirin are with 8% approximately 4 times higher than in Germany with 2%. 
 
